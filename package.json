@@ -20,6 +20,7 @@
     "grunt-protractor-webdriver": "^0.2.5",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
+    "gulp-angular-protractor": "^0.3.0",
     "gulp-protractor": "^3.0.0",
     "jasmine-reporters": "^2.2.0"
   }
