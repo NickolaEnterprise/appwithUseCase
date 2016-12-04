@@ -19,8 +19,7 @@ gulp.task('StartWD', webdriver_standalone);
 
 gulp.task('StartPT', function() {
     gulp.src(['test/hudkov.js']).pipe(protractor({
-        configFile: 'test/protractor.c.js',
-        args: ['--baseUrl', 'http://localhost:1818']
+        configFile: 'test/protractor.c.js'
     })).on('error', function(e) {
         console.log(e)
     });
