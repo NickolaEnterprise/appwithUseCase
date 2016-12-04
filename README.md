@@ -7,6 +7,7 @@ Application with e2e testing
 <br>
 <b>bower install</b>
 <br>
-Проект запустить с помощью команд:
+Проект запустить с помощью команды:
+<br>
 <b>gulp</b>  //-запускает и обновляет webdriver, сервер и е2е тесты 
 
