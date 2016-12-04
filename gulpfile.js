@@ -10,7 +10,7 @@ var connect = require('gulp-connect');
 gulp.task('StartServer', function() {
     connect.server(
         {
-            port: 1717
+            port: 1818
         }
     );
 });
@@ -20,7 +20,7 @@ gulp.task('StartWD', webdriver_standalone);
 gulp.task('StartPT', function() {
     gulp.src(['test/hudkov.js']).pipe(protractor({
         configFile: 'test/protractor.c.js',
-        args: ['--baseUrl', 'http://localhost:1717']
+        args: ['--baseUrl', 'http://localhost:1818']
     })).on('error', function(e) {
         console.log(e)
     });
