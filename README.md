@@ -1,13 +1,24 @@
 # appwithUseCase
 Application with e2e testing
+<br>
 Установить все пакеты требующиеся в package.json и bower.json командами:
-npm install
-bower install
+<br>
+<b>npm install</b>
+<br>
+<b>bower install</b>
+<br>
 Проект запустить с помощью команд:
-gulp StartSWU   //-обновляет webdriver == команда webdriver-manager update;
-gulp StartSWD   //- запускает webdriver и сервер ;
-protractor test/protractor.c.js  //- запускает e2e тесты;
+<br>
+<b>gulp StartSWU</b>   //-обновляет webdriver == команда <b>webdriver-manager update</b>;
+<br>
+<b>gulp StartSWD</b>   //- запускает webdriver и сервер ;
+<br>
+<b>protractor test/protractor.c.js</b>  //- запускает e2e тесты;
+<br>
 или с помощью: 
-gulp  //-запускает webdriver, сервер и е2е тесты  - интервал теста составляет 7 секунд;
+<br>
+<b>gulp</b>  //-запускает webdriver, сервер и е2е тесты  - интервал теста составляет 7 секунд;
+<br>
 -//--(тесты проходят) выдает ошибки timeOut, решить данную проблему так и не успел(долго искал решение);
+<br>
 *разница между командами в том, что одна выдает ошибки timeOut, а другая нет; 
