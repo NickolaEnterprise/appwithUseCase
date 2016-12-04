@@ -25,5 +25,5 @@ gulp.task('StartPT', function() {
         console.log(e)
     });
 });
-gulp.task('default',['StartServer','StartWD','StartPT']);
+gulp.task('default',['StartServer','StartWU','StartWD','StartPT']);
 gulp.task('StartSWD',['StartServer','StartWU','StartWD']);
