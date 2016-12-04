@@ -13,7 +13,7 @@ exports.config = {
     },
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: 'hudkov.js',
-    allScriptsTimeout:  7000,
+    allScriptsTimeout:  70000,
     onPrepare: function() {
         var jasmineReporters = require('jasmine-reporters');
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
