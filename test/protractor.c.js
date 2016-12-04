@@ -8,12 +8,8 @@ exports.config = {
             'browserName': 'chrome'
         },
     framework: 'jasmine',
-    jasmineNodeOpts: {
-        defaultTimeoutInterval: 7000
-    },
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: 'hudkov.js',
-    allScriptsTimeout:  70000,
     onPrepare: function() {
         var jasmineReporters = require('jasmine-reporters');
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
