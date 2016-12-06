@@ -1,7 +1,3 @@
-/**
- * Created by Николай on 02.12.2016.
- */
-    //vitalii.sergey@gmail.com
 describe('Главный набор тестов:', function() {
     var eRS;
     var eMS;
@@ -15,6 +11,7 @@ describe('Главный набор тестов:', function() {
         eMSU = element(by.model('step.username'));
         eMSW = element(by.model('step.web'));
         eMSC = element(by.model('step.comment'));
+
     });
     describe('a) Набор тестов всех вариантов использование поиска по таблице', function () {
         it('1)Поиск по заданому значанию Nickola и сравнение с полученным результатом', function () {
@@ -41,8 +38,7 @@ describe('Главный набор тестов:', function() {
             expect(click).toBeTruthy();
         });
     });
-
-    describe("b) Набор тестов с работой формы добавления", function()
+    describe('b) Набор тестов с работой формы добавления', function()
     {
         it('1)Проверка на добаление введенных данных', function () {
             eMSU.sendKeys('Nickola Hudkov');
@@ -103,7 +99,7 @@ describe('Главный набор тестов:', function() {
         expect(boom).toBeFalsy();
     });
     });
-    describe("с) Тест всей функциональности e2e", function()
+    describe('с) Тест всей функциональности e2e', function()
     {
         it('1)E2E test', function () {
             eMSU.sendKeys('Hudkov');
