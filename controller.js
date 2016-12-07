@@ -1,11 +1,57 @@
-/**
- * Created by Николай on 02.12.2016.
- */
-var tryOne = angular.module('tryOne',[]);
-
-tryOne.controller('stepOneCtrl', function()
+var tryOne = angular.module('tryOne', ['ngRoute']);
+tryOne.config(function($routeProvider) {
+    $routeProvider
+        .when('/', {
+            templateUrl : 'view/mainPage.html'
+        })
+        .when('/login', {
+            templateUrl : 'view/login.html'
+        })
+        .when("/registretion", {
+            templateUrl : "view/registration.html"
+        })
+        .when("/home", {
+            templateUrl : "view/homePage.html"
+        });
+});
+tryOne.controller('stepOneCtrl', function($location, $scope)
     {
-     var step = this;
+        $scope.user_r = {username:'', password:'', mail:''};
+        $scope.user_l = {username:'', password:''};
+        $scope.openLoginPage = function(){
+           $location.path('login');
+       };
+        $scope.openRegPage = function(){
+            $location.path('registretion');
+        };
+        $scope.registration = function(){
+        if ($scope.user_r.username == ''| $scope.user_r.password == ''| $scope.user_r.mail == '')
+        {
+            $scope.message= "Error";
+        }else
+        {
+            $scope.message= "Success, wait";
+        }
+    };
+        $scope.login = function(){
+            if ($scope.user_l.password == '1111')
+            {
+                if($scope.user_l.username !== '') {
+                    $scope.usernickname = $scope.user_l.username;
+                    $location.path('home');
+                }else
+                    $scope.message_l= "Error, use You nickname";
+
+            }else
+            {
+                $scope.message_l= "Error, You don't use password or Your password have mistake";
+            }
+        };
+        $scope.logout = function(){
+            $scope.usernickname = '';
+            $location.path('');
+        };
+        var step = this;
         step.stats = [
         {
             'username': 'Nickola',
@@ -43,6 +89,7 @@ tryOne.controller('stepOneCtrl', function()
             'check': false
         }
     ];
+
             step.statDelete = function() {
             var oneStat = step.stats;
             step.stats = [];
