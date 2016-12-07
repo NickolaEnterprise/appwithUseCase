@@ -1,6 +1,3 @@
-/**
- * Created by Николай on 04.12.2016.
- */
 var gulpProtractorAngular = require('gulp-angular-protractor');
 var gulp = require('gulp');
 var webdriver_standalone = require("gulp-protractor").webdriver_standalone;
@@ -25,4 +22,14 @@ gulp.task('StartProtractor', function(callback) {
         }).on('end', callback);
 });
 
-gulp.task('default',['StartServer','StartWD','StartProtractor']);
+gulp.task('e2eTestPageObject', function(callback) {
+    gulp.src(['pageObject/testLogin/test.e2e.login.js', 'pageObject/testRegister/test.e2e.register.js'])
+        .pipe(gulpProtractorAngular({
+            configFile: 'pageObject/config.js'
+        })).on('error', function(e) {
+            console.log(e);
+        }).on('end', callback);
+});
+
+gulp.task('defaultWait',['StartServer','StartWD','StartProtractor']);
+gulp.task('default',['StartServer','StartWD','e2eTestPageObject']);
