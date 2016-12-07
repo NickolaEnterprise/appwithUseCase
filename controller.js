@@ -27,7 +27,7 @@ tryOne.controller('stepOneCtrl', function($location, $scope)
         $scope.registration = function(){
         if ($scope.user_r.username == ''| $scope.user_r.password == ''| $scope.user_r.mail == '')
         {
-            $scope.message= "Error";
+            $scope.message= "Error, fill all input";
         }else
         {
             $scope.message= "Success, wait";
