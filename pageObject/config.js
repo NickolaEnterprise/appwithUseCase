@@ -5,7 +5,7 @@ exports.config = {
     },
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['testRegister/test.e2e.register.js','testLogin/test.e2e.login.js'],
+    specs: ['testRegister/test.e2e.register.js', 'testLogin/test.e2e.login.js', 'test/hudkov.js'],
     onPrepare: function() {
         var jasmineReporters = require('jasmine-reporters');
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
