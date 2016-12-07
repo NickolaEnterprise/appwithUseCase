@@ -1,0 +1,51 @@
+<br>
+<form>
+    <input class="btn-primary log" type="submit" ng-click="openLoginPage()" value="Authanticait">
+    <input class="btn-primary reg" type="submit" ng-click="openRegPage()" value="Registration">
+</form>
+<br>
+<form ng-submit="step.addStat()">
+    <div class="form-group row">
+        <label class="col-xs-2 col-form-label">Имя</label>
+        <div class="col-xs-10">
+            <input class="form-control" ng-model="step.username">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-xs-2 col-form-label">Сайт</label>
+        <div class="col-xs-10">
+            <input class="form-control" ng-model="step.web">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-xs-2 col-form-label">Комментарий</label>
+        <div class="col-xs-10">
+            <input class="form-control" ng-model="step.comment">
+        </div>
+    </div>
+    <input class="btn-primary" type="submit" value="Дабавить">
+</form>
+<br>
+<input ng-model="search"  placeholder="Поиск">
+<div class="pull-right">
+    Количевство записей:{{stepStat.length}}
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>Сайт</th>
+        <th>Комментарий</th>
+        <th>Удалить</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="stat in stepStat = (step.stats | filter:{username:search})">
+    <tr>
+        <td>{{stat.username}}</td>
+        <td><a href="https://{{stat.domain}}" target="_blank"><img ng-src="{{stat.img}}" height="25"/></td>
+        <td>{{stat.comment}}</td>
+        <td><input type="checkbox" class="Click" ng-model="stat.check" ng-click="step.statDelete()"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
